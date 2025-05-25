@@ -1,120 +1,502 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Mapa de google</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Formulario -->
-    <div class="Formulario">
-      <form>
-        <!-- Nombre del afectado -->
-        <h2 class="TituloFormulario">Formulario de prueba</h2>
-        <label for="">Nombre </label> <br />
-        <input type="text" class="input" id="NombreUusario" />
-        <br />
-        <!-- Fecha del robo -->
-        <label for="Fechayhora">Fecha y Hora </label> <br />
-        <input type="datetime-local" class="input" id="Fechayhora" />
-        <br />
-        <!-- Correo -->
-        <label for="CorreoUsuario">Correo Institucional </label> <br />
-        <input type="email" class="input" id="CorreoUsuario" />
-        <br />
-        <!-- Descripcion -->
-        <label for="DescripcionUsuario">Descipcion de lo sucedido</label>
-        <br />
-        <input type="text" class="input" id="DescripcionUsuario" />
-        <!-- Mapa -->
-        <br />
-        <label>Mapa</label>
-        <br />
-        <button
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          class="botonver"
-        >
-          Desplegar mapa
-        </button>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Robo - Formulario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Styles/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Encabezado del formulario -->
+    <header class="form-header">
+      <h1>Entorno De Seguridad En La Universidad Libre</h1>
+      <p class="lead">Complete el siguiente formulario para reportar un robo</p>
+    </header>
+
+    <!-- Formulario principal -->
+    <main>
+      <form id="reporteForm" novalidate>
+        <!-- Información personal -->
+        <fieldset class="mb-4">
+          <legend class="h4 mb-3">Datos Basicos</legend>
+          <!-- Carrera o programa -->
+          <div class="mb-3">
+            <label for="NombreUsuario" class="form-label required-field">1.Carrera o programa</label>
+            <input type="text" class="form-control" id="NombreUsuario" required
+              placeholder="Ingrese el nombre de su carrera">
+          </div>
+          <!-- <div class="invalid-feedback">
+              Por favor ingrese su nombre.
+            </div> -->
+          <!-- Semestres -->
+          <div class="mb-3">
+            <label for="Semestre" class="form-label required-field">2.Semestre</label>
+            <select class="form-control" name="Semestre" id="Semestre">
+              <option value="" selected disabled>Selecione un Semestres</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+
+
+            <!-- Jornada de estudio -->
+            <div class="mb-3">
+              <label for="Jornada" class="form-label required-field">3.Jornada</label>
+              <select class="form-control" name="Jornada" id="Jornada">
+                <option value="" selected disabled>Seleccione una Jornada</option>
+                <option value="Diurna">Diurna</option>
+                <option value="Nocturna">Nocturna</option>
+                <option value="Mixta">Mixta</option>
+              </select>
+            </div>
+
+            <!-- Edad -->
+            <div class="mb-3">
+              <label for="Edad" class="form-label required-field">4.Edad</label>
+              <input type="number" class="form-control" id="Edad" required
+                placeholder="Ingrese su edad">
+
+            </div>
+
+
+            <!-- Localidad -->
+            <div class="mb-3">
+              <label for="Jornada" class="form-label required-field">5.Localidad</label>
+              <select class="form-control" name="Localidad" id="Localidad">
+                <option value="" selected disabled>Seleccione una Localidad</option>
+                <option value="Usaquén">Usaquén</option>
+                <option value="Chapinero">Chapinero</option>
+                <option value="Santa Fé">Santa Fé</option>
+                <option value="San Cristóbal">San Cristóbal</option>
+                <option value="Usme">Usme</option>
+                <option value="Tunjuelito">Tunjuelito</option>
+                <option value="Bosa">Bosa</option>
+                <option value="Kennedy">Kennedy</option>
+                <option value="Engativá">Engativá</option>
+                <option value="Suba">Suba</option>
+                <option value=" Barrios Unidos"> Barrios Unidos</option>
+                <option value="Teusaquillo">Teusquillo</option>
+                <option value="Los Mártires">Los Mártires</option>
+                <option value="Antonio Nariño">Antonio Nariño</option>
+                <option value="Puente Aranda">Puente Aranda</option>
+                <option value="Candelaria">Candelaria</option>
+                <option value="Rafael Uribe Uribe">Rafael Uribe Uribe</option>
+                <option value="Ciudad Bolívar">Ciudad Bolívar</option>
+                <option value="Sumapaz">Sumapaz</option>
+              </select>
+            </div>
+
+            <!-- Barrio de residencia -->
+            <div class="mb-3">
+              <label for="Barrio" class="form-label required-field">6.Barrio de residencia</label>
+              <input type="text" class="form-control" id="Barriodad" required
+                placeholder="Escriba su barrio de residencia">
+
+            </div>
+
+
+            <!-- Cómo se transporta a la Universidad libre -->
+            <div class="mb-3">
+              <label for="Transporte" class="form-label required-field">7.¿Cómo se transporta a la Universidad libre?</label>
+              <select class="form-control" name="Transporte" id="Transporte">
+                <option value="" selected disabled>
+                  Seleccione una medio de transporte
+                </option>
+                <option value="Transporte Público">Transporte Público</option>
+                <option value="Transporte plataforma">Transporte plataforma</option>
+                <option value="Bicicleta-patineta electrica">Bicicleta - patineta electrica</option>
+                <option value="Moto">Moto</option>
+                <option value="Automóvil">Automóvil</option>
+                <option value="A pie">A pie</option>
+
+              </select>
+            </div>
+
+
+        </fieldset>
+        <!-- Percepción de seguridad -->
+        <fieldset class="mb-4">
+          <legend class="h4 mb-3">Percepción de seguridad</legend>
+
+          <!-- ¿Cual es su percepción de seguridad en zonas aledañas a la universidad? -->
+          <label for="PercepcionSeguridad" class="form-label required-field">9¿Cual es su percepción de seguridad en zonas aledañas a la universidad?</label>
+          <select class="form-control" name="PercepcionSeguridad" id="PercepcionSeguridad">
+            <option value="" selected disabled>
+              Seleccione una percepcion
+            </option>
+            <option value="MuySegura">Muy Segura</option>
+            <option value="Segura">Segura</option>
+            <option value="Normal">Normal</option>
+            <option value="Inseguridad">Inseguridad</option>
+            <option value="MuyInsegurda">Muy Insegurda</option>
+          </select>
+
+          <div class="mb-3">
+            <label for="PercepcionSeguridadAvRojas26" class="form-label required-field">10
+              ¿Sobre la percepción de seguridad en zonas aledañas a la universidad, de las siguientes asigne un valor entre Muy seguro y Muy inseguro siendo Muy seguro 5 y Muy inseguro 0?
+            </label>
+            <br>
+            <br>
+            <h6>Avenia rojas hacia las 26</h6>
+            <select class="form-control" name="PercepcionSeguridadAvRojas26" id="PercepcionSeguridadAvRojas26">
+              <option value="" selected disabled>
+                Seleccione un valor
+              </option>
+              <option value="MuySegura">Muy Segura </option>
+              <option value="Segura">Segura </option>
+              <option value="Normal">Normal </option>
+              <option value="Inseguridad">Inseguridad </option>
+              <option value="MuyInsegurda">Muy Insegurda</option>
+            </select>
+
+            <h6>Avenia rojas hacia la calle 63</h6>
+            <select class="form-control" name="PercepcionSeguridadAvRojas63" id="PercepcionSeguridadAvRojas63">
+              <option value="" selected disabled>
+                Seleccione un valor
+              </option>
+              <option value="MuySegura">Muy Segura </option>
+              <option value="Segura">Segura </option>
+              <option value="Normal">Normal </option>
+              <option value="Inseguridad">Inseguridad </option>
+              <option value="MuyInsegurda">Muy Insegurda</option>
+            </select>
+
+            <h6>Calle 53 entre avenida rojas y avenida Boyaca</h6>
+            <select class="form-control" name="PercepcionSeguridadCale53YavBoyaca" id="PercepcionSeguridadCale53YavBoyaca">
+              <option value="" selected disabled>
+                Seleccione un valor
+              </option>
+              <option value="MuySegura">Muy Segura </option>
+              <option value="Segura">Segura </option>
+              <option value="Normal">Normal </option>
+              <option value="Inseguridad">Inseguridad </option>
+              <option value="MuyInsegurda">Muy Insegurda</option>
+            </select>
+          </div>
+
+          <!-- Ha sido victima de intimidaciones, hurtos o agresiones en zonas aledañas a la universidad? -->
+          <div class="mb-4">
+            <div class="mb-3">
+              <label class="form-label required-field">
+                11. ¿Ha sido víctima de intimidaciones, hurtos o agresiones en zonas aledañas a la universidad?
+              </label>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="intimidacionCheck" value="Intimidación" name="tipoIncidente">
+                <label class="form-check-label" for="intimidacionCheck">Intimidación</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hurtoCheck" value="Hurto" name="tipoIncidente">
+                <label class="form-check-label" for="hurtoCheck">Hurto</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agresionCheck" value="Agresión" name="tipoIncidente">
+                <label class="form-check-label" for="agresionCheck">Agresión</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="otroCheck" value="Otro" name="tipoIncidente">
+                <label class="form-check-label" for="otroCheck">Otro</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="noCheck" value="No" name="tipoIncidente">
+                <label class="form-check-label" for="noCheck">No (No he sido víctima)</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Descripción de eventos de inseguridad -->
+        <fieldset class="mb-4">
+          <legend class="h4 mb-3">Descripción de eventos de inseguridad</legend>
+          <!-- En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido) -->
+          <div class="mb-3">
+            <label for="Fechayhora" class="form-label required-field">12.¿En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido)</label>
+            <label class="form-label required-field">Ubicación del incidente</label>
+            <button type="button" class="btn btn-map w-100" data-bs-toggle="modal" data-bs-target="#mapaModal">
+              <i class="bi bi-map"></i> Seleccionar ubicación en el mapa
+            </button>
+            <small class="text-muted">Haga clic para seleccionar la ubicación exacta</small>
+          </div>
+          <!-- 13.Que dia ocurrieron los hechos -->
+
+          <div class="mb-3">
+            <label for="DescripcionUsuario" class="form-label required-field">13.Que dia ocurrieron los hecho</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lunescheck" value="Lunes" name="lunescheck">
+              <label class="form-check-label" for="lunescheck">Lunes</label>
+            </div>
+
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="martescheck" value="Martes" name="martescheck">
+              <label class="form-check-label" for="lunescheck">Martes</label>
+            </div>
+
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="miercolescheck" value="Miercoles" name="miercolescheck">
+              <label class="form-check-label" for="miercolescheck">Miercoles</label>
+            </div>
+
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="ljuevescheck" value="Jueves" name="juevescheck">
+              <label class="form-check-label" for="juevescheck">Jueves</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="viernescheck" value="Viernes" name="lviernescheck">
+              <label class="form-check-label" for="lviernescheck">Viernes</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="sabadocheck" value="Sabado" name="sabadocheck">
+              <label class="form-check-label" for="sabadocheck">Sabado</label>
+            </div>
+          </div>
+
+          <!-- 14.¿A que hora aproximada ocurrieron los hechos? -->
+          <div class="mb-3">
+            <label for="tiempoSucedido" class="form-label required-field">14.¿A que hora aproximada ocurrieron los hechos?</label>
+            <input type="time" class="form-control" id="tiempoSucedido" required
+              placeholder="Ingrese el nombre de su carrera">
+
+          </div>
+          <!-- Fue victima de hurto de: -->
+          <div class="mb-3">
+            <label for="victimaDeHurto" class="form-label required-field">15. Fue victima de hurto de/>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="CelularHurto" value="Celular" name="CelularHurto">
+                <label class="form-check-label" for="lunescheck">Celular</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="PortatilHurto" value="Portatil" name="PortatilHurto">
+                <label class="form-check-label" for="lunescheck">Portátil</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="relojHurto" value="Reloj" name="relojHurto">
+                <label class="form-check-label" for="lunescheck">Reloj</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="dineroHurto" value="Dinero" name="dineroHurto">
+                <label class="form-check-label" for="lunescheck">Dinero</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Bicicleta-patinetaHurto" value="Bicicleta-patineta" name="Bicicleta-patinetaHurto">
+                <label class="form-check-label" for="lunescheck">Bicicleta patineta</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="otroHurto" value="Otros" name="otroHurto">
+                <label class="form-check-label" for="lunescheck">Otros</label>
+              </div>
+
+          </div>
+
+          <!--16. ¿En el hecho intervinieron cuantos delincuentes?-->
+          <div class="mb-3">
+            <label for="IntervinieronDelicuentes" class="form-label required-field">16.¿En el hecho intervinieron cuantos delincuentes?</label>
+            <select class="form-control" name="IntervinieronDelicuentes" id="IntervinieronDelicuentes">
+              <option value="" selected disabled>
+                Seleccione una opcion
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="MasDe2">Mas 2</option>
+
+            </select>
+          </div>
+          <!-- 17.¿Emplearon algún tipo de arma? -->
+          <div class="mb-3">
+            <label for="emplearonAlgunArma" class="form-label required-field">17.¿Emplearon algún tipo de arma?</label>
+            <select class="form-control" name="emplearonAlgunArma" id="emplearonAlgunArma">
+              <option value="" selected disabled>
+                Seleccione una opcion
+              </option>
+              <option value="Ningún tipo de arma solo intimidaciones">Ningún tipo de arma solo intimidaciones</option>
+              <option value="Alguna sustancia">Alguna sustancia</option>
+              <option value="Arma blanca">Arma blanca</option>
+              <option value="Arma de fuego">Arma de fuego</option>
+
+            </select>
+          </div>
+
+          <!-- 18.Los perpetradores se desplazaban: -->
+          <div class="mb-3">
+            <label for="desplazamientoPerpetradores" class="form-label required-field">18.Los perpetradores se desplazaban:</label>
+            <select class="form-control" name="desplazamientoPerpetradores" id="desplazamientoPerpetradores">
+              <option value="" selected disabled>
+                Seleccione una opcion
+              </option>
+              <option value="Apie">A pie</option>
+              <option value="Bicicleta">En bicicleta</option>
+              <option value="Moticicleta"> Motocicleta</option>
+              <option value="Vehiculo">Vehículo</option>
+              <option value="Otro">Otros</option>
+
+            </select>
+          </div>
+
+          <!-- 19.Usted se encontraba: -->
+          <div class="mb-3">
+            <label for="comoSeEncontraba" class="form-label required-field">19.Los perpetradores se desplazaban:</label>
+            <select class="form-control" name="comoSeEncontraba" id="comoSeEncontraba">
+              <option value="" selected disabled>
+                Seleccione una opcion
+              </option>
+              <option value="Solo">Solo</option>
+              <option value="Acompañado">Acompañado</option>
+            </select>
+          </div>
+
+
+          <!-- 20.¿En el hecho usted presento algún tipo de lesión? -->
+          <div class="mb-3">
+            <label for="lecciones" class="form-label required-field">20.¿En el hecho usted presento algún tipo de lesión</label>
+            <select class="form-control" name="lecciones" id="lecciones">
+              <option value="" selected disabled>
+                Seleccione una opcion
+              </option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+
+
+          <!-- 21.¿En el hecho usted presento algún tipo de lesión? -->
+          <div class="mb-3">
+            <label for="posteriorHechos" class="form-label required-field">21.Posterior a los hechos usted</label>
+            <select class="form-control" name="posteriorHechos" id="posteriorHechos">
+              <option value="" selected disabled>
+                Seleccione una opcion
+              </option>
+              <option value="Llamoalapolicíadelcuadrante">Llamo a la policía del cuadrante</option>
+              <option value="Informóafamiliaresoamigos">Informó a familiares o amigos</option>
+              <option value="Informóapersonaldelauniversidad">Informó a personal de la universidad</option>
+              <option value="Noinformó">No informó</option>
+            </select>
+          </div>
+
+
+          <!-- 22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?
+ -->
+          <div class="mb-3">
+            <label for="recomendaciones" class="form-label required-field">22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?</label>
+            <input type="text" class="form-control" id="recomendaciones" required
+              placeholder="Ingrese una recomendaciones o sugerencias">
+          </div>
+
+
+
+
+
+        </fieldset>
+
+        <!-- Botones de acción -->
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <!-- <button type="reset" class="btn btn-outline-secondary me-md-2">Limpiar formulario</button> -->
+          <button type="submit" class="btn btn-primary">Enviar reporte</button>
+        </div>
       </form>
-    </div>
-    <!-- Hasta aqui va el formulario -->
+    </main>
 
-    <!-- Hasta aqui va las Coordenadas -->
+    <!-- Tabla de coordenadas -->
+    <!-- <section class="mt-5">
+      <h2 class="h4 mb-3">Ubicaciones reportadas</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Latitud</th>
+              <th scope="col">Longitud</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-coordenadas"> -->
+    <!-- Datos se llenarán dinámicamente -->
+    <!-- <tr>
+              <td colspan="5" class="text-center">No hay reportes registrados</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div> -->
 
-    <!-- Tabla  -->
-    <div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Latitud</th>
-            <th scope="col">Longitud</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-coordenadas"></tbody>
-      </table>
-    </div>
-    <!-- Hasta aqui va la tabla -->
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
+    <!-- Modal del Mapa -->
+    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Mapa</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h5 class="modal-title" id="mapaModalLabel">Seleccione la ubicación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- Mapa -->
-            <div id="map"></div>
-            <!-- Coordenadas -->
-            <p id="Coordenadas">Coordenas</p>
+            <div class="alert alert-info">
+              <p id="Coordenadas">Haga clic en el mapa para seleccionar la ubicación exacta</p>
+            </div>
+            <div id="map" class="mb-3"></div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="botoncerrar" data-bs-dismiss="modal">
-              Cerrar mapa
-            </button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="confirmarUbicacion">Confirmar ubicación</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- Hasta aqui va el modal -->
+
+
+
+    <!-- Scripts -->
+    <!-- Map -->
+    <script src="Scripts/Map.js"></script>
+    <!-- JsV -->
+    <script src="Scripts/Validation.js"></script>
+
+
+    <!-- Google maps -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFI7AThHLSRjZnwrKUaNEWb2eA3ZraDbI&callback=InicialMapa"
       async
-      defer
-    ></script>
+      defer></script>
 
-    <script src="map.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Js
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script> -->
+
+
+    <!-- JSboostraaaaapa -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
       integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>
