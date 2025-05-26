@@ -80,7 +80,7 @@ class Database
 try {
     $db = Database::getConnection();
 
-    echo "Conexión exitosa";
+    // echo "Conexión exitosa";
 } catch (Exception $ex) {
     echo $ex->getMessage();
 }
