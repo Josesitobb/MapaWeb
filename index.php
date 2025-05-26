@@ -28,7 +28,7 @@ error_reporting(E_ALL);
 
     <!-- Formulario principal -->
     <main>
-      <form id="reporteForm" action="/Controllers/User.php " method="post">
+      <form id="reporteForm" action="/Controllers/User.php" method="post">
         <!-- Información personal -->
         <fieldset class="mb-4">
           <legend class="h4 mb-3">Datos Basicos</legend>
@@ -36,7 +36,7 @@ error_reporting(E_ALL);
           <div class="mb-3">
             <label for="NombreUsuario" class="form-label required-field">1.Carrera o programa</label>
             <input type="text" class="form-control" id="Carrera" name="Program"
-              placeholder="Ingrese el nombre de su carrera">
+              placeholder="Ingrese el nombre de su carrera" require>
           </div>
           <!-- <div class="invalid-feedback">
               Por favor ingrese su nombre.
@@ -44,7 +44,7 @@ error_reporting(E_ALL);
           <!-- Semestres -->
           <div class="mb-3">
             <label for="Semestre" class="form-label required-field">2.Semestre</label>
-            <select class="form-control" name="Semestre" id="Semestre">
+            <select class="form-control" name="Semestre" id="Semestre" require>
               <option value="" selected disabled>Selecione un opcion</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -62,7 +62,7 @@ error_reporting(E_ALL);
             <!-- Jornada de estudio -->
             <div class="mb-3">
               <label for="Day" class="form-label required-field">3.Jornada</label>
-              <select class="form-control" name="Day" id="Day">
+              <select class="form-control" name="Day" id="Day" require>
                 <option value="" selected disabled>Seleccione una Jornada</option>
                 <option value="Diurna">Diurna</option>
                 <option value="Nocturna">Nocturna</option>
@@ -74,7 +74,7 @@ error_reporting(E_ALL);
             <div class="mb-3">
               <label for="Age" class="form-label required-field">4.Edad</label>
               <input type="number" class="form-control" id="Age" name="Age"
-                placeholder="Ingrese su edad">
+                placeholder="Ingrese su edad" require>
 
             </div>
 
@@ -82,7 +82,7 @@ error_reporting(E_ALL);
             <!-- Localidad -->
             <div class="mb-3">
               <label for="Locality" class="form-label required-field">5.Localidad</label>
-              <select class="form-control" name="Locality" id="Locality">
+              <select class="form-control" name="Locality" id="Locality" require>
                 <option value="" selected disabled>Seleccione una Localidad</option>
                 <option value="Usaquén">Usaquén</option>
                 <option value="Chapinero">Chapinero</option>
@@ -110,7 +110,7 @@ error_reporting(E_ALL);
             <div class="mb-3">
               <label for="Neighborhood" class="form-label required-field">6.Barrio de residencia</label>
               <input type="text" class="form-control" id="Neighborhood" name="Neighborhood"
-                placeholder="Escriba su barrio de residencia">
+                placeholder="Escriba su barrio de residencia" require>
 
             </div>
 
@@ -118,7 +118,7 @@ error_reporting(E_ALL);
             <!-- Cómo se transporta a la Universidad libre -->
             <div class="mb-3">
               <label for="Transport" class="form-label required-field">7.¿Cómo se transporta a la Universidad libre?</label>
-              <select class="form-control" name="Transport" id="Transport">
+              <select class="form-control" name="Transport" id="Transport" require>
                 <option value="" selected disabled>
                   Seleccione una medio de transporte
                 </option>
@@ -140,7 +140,7 @@ error_reporting(E_ALL);
 
           <!-- ¿Cual es su percepción de seguridad en zonas aledañas a la universidad? -->
           <label for="Perception" class="form-label required-field">9¿Cual es su percepción de seguridad en zonas aledañas a la universidad?</label>
-          <select class="form-control" name="Perception" id="Perception">
+          <select class="form-control" name="Perception" id="Perception" require>
             <option value="" selected disabled>
               Seleccione una percepcion
             </option>
@@ -152,13 +152,13 @@ error_reporting(E_ALL);
           </select>
 
           <div class="mb-3">
-            <label for="AvRojas26" class="form-label required-field">10
+            <label for="AvRojas26" class="form-label required-field" >10
               ¿Sobre la percepción de seguridad en zonas aledañas a la universidad, de las siguientes asigne un valor entre Muy seguro y Muy inseguro siendo Muy seguro 5 y Muy inseguro 0?
             </label>
             <br>
             <br>
             <h6>Avenia rojas hacia las 26</h6>
-            <select class="form-control" name="AvRojas26" id="AvRojas26">
+            <select class="form-control" name="AvRojas26" id="AvRojas26"require>
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
@@ -170,7 +170,7 @@ error_reporting(E_ALL);
             </select>
 
             <h6>Avenia rojas hacia la calle 63</h6>
-            <select class="form-control" name="AvRojas63" id="AvRojas63">
+            <select class="form-control" name="AvRojas63" id="AvRojas63" require>
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
@@ -182,7 +182,7 @@ error_reporting(E_ALL);
             </select>
 
             <h6>Calle 53 entre avenida rojas y avenida Boyaca</h6>
-            <select class="form-control" name="AvRojas53yBoyaca" id="AvRojas53yBoyaca">
+            <select class="form-control" name="AvRojas53yBoyaca" id="AvRojas53yBoyaca" require>
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
@@ -221,7 +221,7 @@ error_reporting(E_ALL);
                 <label class="form-check-label" for="otroCheck" name="Intimidation[]">Otro</label>
               </div>
 
-              <div class="form-check">
+              <div class="form-check" >
                 <input class="form-check-input" type="checkbox" id="noCheck" value="No" name="Intimidation[]">
                 <label class="form-check-label" for="noCheck" name="Intimidation[]">No (No he sido víctima)</label>
               </div>
@@ -479,8 +479,8 @@ error_reporting(E_ALL);
     <!-- Scripts -->
     <!-- Map -->
     <script src="Scripts/Map.js"></script>
-    <!-- JsV
-    <script src="Scripts/Validation.js"></script> -->
+    <!-- Validaciones en javascrip -->
+    <script src="Scripts/Validation.js"></script> 
 
 
     <!-- Google maps -->
