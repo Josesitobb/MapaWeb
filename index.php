@@ -20,14 +20,14 @@
 
     <!-- Formulario principal -->
     <main>
-      <form id="reporteForm" novalidate>
+      <form id="reporteForm" action="./Controllers/User.php " method="post">
         <!-- Información personal -->
         <fieldset class="mb-4">
           <legend class="h4 mb-3">Datos Basicos</legend>
           <!-- Carrera o programa -->
           <div class="mb-3">
             <label for="NombreUsuario" class="form-label required-field">1.Carrera o programa</label>
-            <input type="text" class="form-control" id="NombreUsuario" required
+            <input type="text" class="form-control" id="Carrera" name="Program"
               placeholder="Ingrese el nombre de su carrera">
           </div>
           <!-- <div class="invalid-feedback">
@@ -37,7 +37,7 @@
           <div class="mb-3">
             <label for="Semestre" class="form-label required-field">2.Semestre</label>
             <select class="form-control" name="Semestre" id="Semestre">
-              <option value="" selected disabled>Selecione un Semestres</option>
+              <option value="" selected disabled>Selecione un opcion</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -53,8 +53,8 @@
 
             <!-- Jornada de estudio -->
             <div class="mb-3">
-              <label for="Jornada" class="form-label required-field">3.Jornada</label>
-              <select class="form-control" name="Jornada" id="Jornada">
+              <label for="Day" class="form-label required-field">3.Jornada</label>
+              <select class="form-control" name="Day" id="Day">
                 <option value="" selected disabled>Seleccione una Jornada</option>
                 <option value="Diurna">Diurna</option>
                 <option value="Nocturna">Nocturna</option>
@@ -64,8 +64,8 @@
 
             <!-- Edad -->
             <div class="mb-3">
-              <label for="Edad" class="form-label required-field">4.Edad</label>
-              <input type="number" class="form-control" id="Edad" required
+              <label for="Age" class="form-label required-field">4.Edad</label>
+              <input type="number" class="form-control" id="Age" name="Age"
                 placeholder="Ingrese su edad">
 
             </div>
@@ -73,8 +73,8 @@
 
             <!-- Localidad -->
             <div class="mb-3">
-              <label for="Jornada" class="form-label required-field">5.Localidad</label>
-              <select class="form-control" name="Localidad" id="Localidad">
+              <label for="Locality" class="form-label required-field">5.Localidad</label>
+              <select class="form-control" name="Locality" id="Locality">
                 <option value="" selected disabled>Seleccione una Localidad</option>
                 <option value="Usaquén">Usaquén</option>
                 <option value="Chapinero">Chapinero</option>
@@ -100,8 +100,8 @@
 
             <!-- Barrio de residencia -->
             <div class="mb-3">
-              <label for="Barrio" class="form-label required-field">6.Barrio de residencia</label>
-              <input type="text" class="form-control" id="Barriodad" required
+              <label for="Neighborhood" class="form-label required-field">6.Barrio de residencia</label>
+              <input type="text" class="form-control" id="Neighborhood" name="Neighborhood"
                 placeholder="Escriba su barrio de residencia">
 
             </div>
@@ -109,8 +109,8 @@
 
             <!-- Cómo se transporta a la Universidad libre -->
             <div class="mb-3">
-              <label for="Transporte" class="form-label required-field">7.¿Cómo se transporta a la Universidad libre?</label>
-              <select class="form-control" name="Transporte" id="Transporte">
+              <label for="Transport" class="form-label required-field">7.¿Cómo se transporta a la Universidad libre?</label>
+              <select class="form-control" name="Transport" id="Transport">
                 <option value="" selected disabled>
                   Seleccione una medio de transporte
                 </option>
@@ -131,8 +131,8 @@
           <legend class="h4 mb-3">Percepción de seguridad</legend>
 
           <!-- ¿Cual es su percepción de seguridad en zonas aledañas a la universidad? -->
-          <label for="PercepcionSeguridad" class="form-label required-field">9¿Cual es su percepción de seguridad en zonas aledañas a la universidad?</label>
-          <select class="form-control" name="PercepcionSeguridad" id="PercepcionSeguridad">
+          <label for="Perception" class="form-label required-field">9¿Cual es su percepción de seguridad en zonas aledañas a la universidad?</label>
+          <select class="form-control" name="Perception" id="Perception">
             <option value="" selected disabled>
               Seleccione una percepcion
             </option>
@@ -144,13 +144,13 @@
           </select>
 
           <div class="mb-3">
-            <label for="PercepcionSeguridadAvRojas26" class="form-label required-field">10
+            <label for="AvRojas26" class="form-label required-field">10
               ¿Sobre la percepción de seguridad en zonas aledañas a la universidad, de las siguientes asigne un valor entre Muy seguro y Muy inseguro siendo Muy seguro 5 y Muy inseguro 0?
             </label>
             <br>
             <br>
             <h6>Avenia rojas hacia las 26</h6>
-            <select class="form-control" name="PercepcionSeguridadAvRojas26" id="PercepcionSeguridadAvRojas26">
+            <select class="form-control" name="AvRojas26" id="AvRojas26">
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
@@ -162,7 +162,7 @@
             </select>
 
             <h6>Avenia rojas hacia la calle 63</h6>
-            <select class="form-control" name="PercepcionSeguridadAvRojas63" id="PercepcionSeguridadAvRojas63">
+            <select class="form-control" name="AvRojas63" id="AvRojas63">
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
@@ -174,7 +174,7 @@
             </select>
 
             <h6>Calle 53 entre avenida rojas y avenida Boyaca</h6>
-            <select class="form-control" name="PercepcionSeguridadCale53YavBoyaca" id="PercepcionSeguridadCale53YavBoyaca">
+            <select class="form-control" name="AvRojas53yBoyaca" id="AvRojas53yBoyaca">
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
@@ -194,28 +194,28 @@
               </label>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="intimidacionCheck" value="Intimidación" name="tipoIncidente">
+                <input class="form-check-input" type="checkbox" id="intimidacionCheck" value="Intimidación" name="Intimidation[]">
                 <label class="form-check-label" for="intimidacionCheck">Intimidación</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="hurtoCheck" value="Hurto" name="tipoIncidente">
-                <label class="form-check-label" for="hurtoCheck">Hurto</label>
+                <input class="form-check-input" type="checkbox" id="hurtoCheck" value="Hurto" name="Intimidation[]">
+                <label class="form-check-label" for="hurtoCheck" name="Intimidation[]">Hurto</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="agresionCheck" value="Agresión" name="tipoIncidente">
-                <label class="form-check-label" for="agresionCheck">Agresión</label>
+                <input class="form-check-input" type="checkbox" id="agresionCheck" value="Agresión" name="Intimidation[]">
+                <label class="form-check-label" for="agresionCheck" name="Intimidation[]">Agresión</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="otroCheck" value="Otro" name="tipoIncidente">
-                <label class="form-check-label" for="otroCheck">Otro</label>
+                <input class="form-check-input" type="checkbox" id="otroCheck" value="Otro" name="Intimidation[]">
+                <label class="form-check-label" for="otroCheck" name="Intimidation[]">Otro</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="noCheck" value="No" name="tipoIncidente">
-                <label class="form-check-label" for="noCheck">No (No he sido víctima)</label>
+                <input class="form-check-input" type="checkbox" id="noCheck" value="No" name="Intimidation[]">
+                <label class="form-check-label" for="noCheck" name="Intimidation[]">No (No he sido víctima)</label>
               </div>
             </div>
           </div>
@@ -233,39 +233,40 @@
             </button>
             <small class="text-muted">Haga clic para seleccionar la ubicación exacta</small>
           </div>
+          <input type="hidden" name="MapTheft" id="coordenadasInput">
           <!-- 13.Que dia ocurrieron los hechos -->
 
           <div class="mb-3">
             <label for="DescripcionUsuario" class="form-label required-field">13.Que dia ocurrieron los hecho</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="lunescheck" value="Lunes" name="lunescheck">
+              <input class="form-check-input" type="checkbox" id="lunescheck" value="Lunes" name="DayFacts[]">
               <label class="form-check-label" for="lunescheck">Lunes</label>
             </div>
 
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="martescheck" value="Martes" name="martescheck">
+              <input class="form-check-input" type="checkbox" id="martescheck" value="Martes" name="DayFacts[]">
               <label class="form-check-label" for="lunescheck">Martes</label>
             </div>
 
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="miercolescheck" value="Miercoles" name="miercolescheck">
+              <input class="form-check-input" type="checkbox" id="miercolescheck" value="Miercoles" name="DayFacts[]">
               <label class="form-check-label" for="miercolescheck">Miercoles</label>
             </div>
 
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="ljuevescheck" value="Jueves" name="juevescheck">
+              <input class="form-check-input" type="checkbox" id="ljuevescheck" value="Jueves" name="DayFacts[]">
               <label class="form-check-label" for="juevescheck">Jueves</label>
             </div>
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="viernescheck" value="Viernes" name="lviernescheck">
+              <input class="form-check-input" type="checkbox" id="viernescheck" value="Viernes" name="DayFacts[]">
               <label class="form-check-label" for="lviernescheck">Viernes</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="sabadocheck" value="Sabado" name="sabadocheck">
+              <input class="form-check-input" type="checkbox" id="sabadocheck" value="Sabado" name="DayFacts[]">
               <label class="form-check-label" for="sabadocheck">Sabado</label>
             </div>
           </div>
@@ -273,7 +274,7 @@
           <!-- 14.¿A que hora aproximada ocurrieron los hechos? -->
           <div class="mb-3">
             <label for="tiempoSucedido" class="form-label required-field">14.¿A que hora aproximada ocurrieron los hechos?</label>
-            <input type="time" class="form-control" id="tiempoSucedido" required
+            <input type="time" class="form-control" id="tiempoSucedido" name="TimeFacts"
               placeholder="Ingrese el nombre de su carrera">
 
           </div>
@@ -282,32 +283,32 @@
             <label for="victimaDeHurto" class="form-label required-field">15. Fue victima de hurto de/>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="CelularHurto" value="Celular" name="CelularHurto">
+                <input class="form-check-input" type="checkbox" id="CelularHurto" value="Celular" name="StolenObject[]">
                 <label class="form-check-label" for="lunescheck">Celular</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="PortatilHurto" value="Portatil" name="PortatilHurto">
+                <input class="form-check-input" type="checkbox" id="PortatilHurto" value="Portatil" name="StolenObject[]">
                 <label class="form-check-label" for="lunescheck">Portátil</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="relojHurto" value="Reloj" name="relojHurto">
+                <input class="form-check-input" type="checkbox" id="relojHurto" value="Reloj" name="StolenObject[]">
                 <label class="form-check-label" for="lunescheck">Reloj</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="dineroHurto" value="Dinero" name="dineroHurto">
+                <input class="form-check-input" type="checkbox" id="dineroHurto" value="Dinero" name="StolenObject[]">
                 <label class="form-check-label" for="lunescheck">Dinero</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="Bicicleta-patinetaHurto" value="Bicicleta-patineta" name="Bicicleta-patinetaHurto">
+                <input class="form-check-input" type="checkbox" id="Bicicleta-patinetaHurto" value="Bicicleta-patineta" name="StolenObject[]">
                 <label class="form-check-label" for="lunescheck">Bicicleta patineta</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="otroHurto" value="Otros" name="otroHurto">
+                <input class="form-check-input" type="checkbox" id="otroHurto" value="Otros" name="StolenObject[]">
                 <label class="form-check-label" for="lunescheck">Otros</label>
               </div>
 
@@ -316,20 +317,20 @@
           <!--16. ¿En el hecho intervinieron cuantos delincuentes?-->
           <div class="mb-3">
             <label for="IntervinieronDelicuentes" class="form-label required-field">16.¿En el hecho intervinieron cuantos delincuentes?</label>
-            <select class="form-control" name="IntervinieronDelicuentes" id="IntervinieronDelicuentes">
+            <select class="form-control" name="NumberOfOffenders" id="IntervinieronDelicuentes">
               <option value="" selected disabled>
                 Seleccione una opcion
               </option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="MasDe2">Mas 2</option>
+              <option value="Mas De 2">Mas 2</option>
 
             </select>
           </div>
           <!-- 17.¿Emplearon algún tipo de arma? -->
           <div class="mb-3">
             <label for="emplearonAlgunArma" class="form-label required-field">17.¿Emplearon algún tipo de arma?</label>
-            <select class="form-control" name="emplearonAlgunArma" id="emplearonAlgunArma">
+            <select class="form-control" name="WeaponType" id="emplearonAlgunArma">
               <option value="" selected disabled>
                 Seleccione una opcion
               </option>
@@ -344,11 +345,11 @@
           <!-- 18.Los perpetradores se desplazaban: -->
           <div class="mb-3">
             <label for="desplazamientoPerpetradores" class="form-label required-field">18.Los perpetradores se desplazaban:</label>
-            <select class="form-control" name="desplazamientoPerpetradores" id="desplazamientoPerpetradores">
+            <select class="form-control" name="DisplacementOfPerpetrators" id="desplazamientoPerpetradores">
               <option value="" selected disabled>
                 Seleccione una opcion
               </option>
-              <option value="Apie">A pie</option>
+              <option value="A pie">A pie</option>
               <option value="Bicicleta">En bicicleta</option>
               <option value="Moticicleta"> Motocicleta</option>
               <option value="Vehiculo">Vehículo</option>
@@ -360,7 +361,7 @@
           <!-- 19.Usted se encontraba: -->
           <div class="mb-3">
             <label for="comoSeEncontraba" class="form-label required-field">19.Los perpetradores se desplazaban:</label>
-            <select class="form-control" name="comoSeEncontraba" id="comoSeEncontraba">
+            <select class="form-control" name="StateAtTheMoment" id="comoSeEncontraba">
               <option value="" selected disabled>
                 Seleccione una opcion
               </option>
@@ -373,7 +374,7 @@
           <!-- 20.¿En el hecho usted presento algún tipo de lesión? -->
           <div class="mb-3">
             <label for="lecciones" class="form-label required-field">20.¿En el hecho usted presento algún tipo de lesión</label>
-            <select class="form-control" name="lecciones" id="lecciones">
+            <select class="form-control" name="TypeOfLesson" id="lecciones">
               <option value="" selected disabled>
                 Seleccione una opcion
               </option>
@@ -387,14 +388,14 @@
           <!-- 21.¿En el hecho usted presento algún tipo de lesión? -->
           <div class="mb-3">
             <label for="posteriorHechos" class="form-label required-field">21.Posterior a los hechos usted</label>
-            <select class="form-control" name="posteriorHechos" id="posteriorHechos">
+            <select class="form-control" name="AfterTheEvents" id="posteriorHechos">
               <option value="" selected disabled>
                 Seleccione una opcion
               </option>
-              <option value="Llamoalapolicíadelcuadrante">Llamo a la policía del cuadrante</option>
-              <option value="Informóafamiliaresoamigos">Informó a familiares o amigos</option>
-              <option value="Informóapersonaldelauniversidad">Informó a personal de la universidad</option>
-              <option value="Noinformó">No informó</option>
+              <option value="Llamo al apolicía del cuadrante">Llamo a la policía del cuadrante</option>
+              <option value="Informó a familiares o amigos">Informó a familiares o amigos</option>
+              <option value="Informó a personal de launiversidad">Informó a personal de la universidad</option>
+              <option value="No informó">No informó</option>
             </select>
           </div>
 
@@ -403,12 +404,9 @@
  -->
           <div class="mb-3">
             <label for="recomendaciones" class="form-label required-field">22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?</label>
-            <input type="text" class="form-control" id="recomendaciones" required
-              placeholder="Ingrese una recomendaciones o sugerencias">
+            <input type="text" class="form-control" id="recomendaciones"
+              placeholder="Ingrese una recomendaciones o sugerencias" name="Recommendation">
           </div>
-
-
-
 
 
         </fieldset>
@@ -473,8 +471,8 @@
     <!-- Scripts -->
     <!-- Map -->
     <script src="Scripts/Map.js"></script>
-    <!-- JsV -->
-    <script src="Scripts/Validation.js"></script>
+    <!-- JsV
+    <script src="Scripts/Validation.js"></script> -->
 
 
     <!-- Google maps -->

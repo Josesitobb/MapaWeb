@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Gracias por tu participación!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+      }
+
+      .thank-you-container {
+        text-align: center;
+        position: relative;
+        z-index: 10;
+      }
+
+      .thank-you {
+        font-size: 5rem;
+        color: white;
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        animation: pulse 2s infinite;
+      }
+
+      .subtext {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 3rem;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .checkmark {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 5;
+        stroke: #4bb71b;
+        stroke-miterlimit: 10;
+        margin: 0 auto;
+        box-shadow: inset 0px 0px 0px rgba(75, 183, 27, 0.4);
+        animation: fill 0.6s ease-in-out 0.6s forwards,
+          scale 0.5s ease-in-out 0.9s both;
+      }
+
+      .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 5;
+        stroke-miterlimit: 10;
+        stroke: #4bb71b;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+      }
+
+      .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+      }
+
+      /* Animations */
+      @keyframes stroke {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes scale {
+        0%,
+        100% {
+          transform: none;
+        }
+        50% {
+          transform: scale3d(1.1, 1.1, 1);
+        }
+      }
+
+      @keyframes fill {
+        100% {
+          box-shadow: inset 0px 0px 0px 50px rgba(75, 183, 27, 0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Confetti animation */
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #f00;
+        opacity: 0;
+      }
+
+      /* Floating bubbles */
+      .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        animation: float linear infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-container">
+      <h1 class="thank-you">¡GRACIAS!</h1>
+      <p class="subtext">
+        Por completar nuestra encuesta. Tu opinión es muy valiosa para nosotros.
+      </p>
+
+      <svg
+        class="checkmark"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 52 52"
+      >
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+        <path
+          class="checkmark__check"
+          fill="none"
+          d="M14.1 27.2l7.1 7.2 16.7-16.8"
+        />
+      </svg>
+    </div>
+
+    <script>
+      // Create bubbles
+      function createBubbles() {
+        const colors = [
+          "rgba(255,255,255,0.2)",
+          "rgba(255,255,255,0.3)",
+          "rgba(255,255,255,0.4)",
+        ];
+
+        for (let i = 0; i < 50; i++) {
+          const bubble = document.createElement("div");
+          bubble.classList.add("bubble");
+
+          // Random size
+          const size = Math.random() * 50 + 20;
+          bubble.style.width = `${size}px`;
+          bubble.style.height = `${size}px`;
+
+          // Random position
+          bubble.style.left = `${Math.random() * 100}%`;
+
+          // Random animation duration and delay
+          const duration = Math.random() * 20 + 10;
+          const delay = Math.random() * 5;
+          bubble.style.animationDuration = `${duration}s`;
+          bubble.style.animationDelay = `${delay}s`;
+
+          // Random color
+          bubble.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+
+          document.body.appendChild(bubble);
+        }
+      }
+
+      // Create confetti
+      function createConfetti() {
+        const colors = [
+          "#f44336",
+          "#e91e63",
+          "#9c27b0",
+          "#673ab7",
+          "#3f51b5",
+          "#2196f3",
+          "#03a9f4",
+          "#00bcd4",
+          "#009688",
+          "#4CAF50",
+          "#8BC34A",
+          "#CDDC39",
+          "#FFEB3B",
+          "#FFC107",
+          "#FF9800",
+          "#FF5722",
+        ];
+
+        for (let i = 0; i < 150; i++) {
+          const confetti = document.createElement("div");
+          confetti.classList.add("confetti");
+
+          // Random position
+          confetti.style.left = `${Math.random() * 100}%`;
+          confetti.style.top = `${Math.random() * 100}%`;
+
+          // Random size
+          const size = Math.random() * 10 + 5;
+          confetti.style.width = `${size}px`;
+          confetti.style.height = `${size}px`;
+
+          // Random color
+          confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+
+          // Random shape
+          if (Math.random() > 0.5) {
+            confetti.style.borderRadius = "50%";
+          } else {
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+          }
+
+          // Animation
+          confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear ${
+            Math.random() * 2
+          }s forwards`;
+
+          document.body.appendChild(confetti);
+        }
+
+        // Add fall animation
+        const style = document.createElement("style");
+        style.innerHTML = `
+                @keyframes fall {
+                    0% {
+                        opacity: 1;
+                        transform: translateY(-100vh) rotate(0deg);
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: translateY(100vh) rotate(360deg);
+                    }
+                }
+            `;
+        document.head.appendChild(style);
+      }
+
+      // Initialize animations
+      window.onload = function () {
+        createBubbles();
+        setTimeout(createConfetti, 1000);
+      };
+    </script>
+  </body>
+</html>

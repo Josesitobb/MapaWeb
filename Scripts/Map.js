@@ -16,6 +16,10 @@ botonConfirmar.addEventListener('click', () => {
             longitudArray: ultimaLongitud
         })
         alert('Enviar elementos')
+        // Convertir elementos en texto
+        const coordenadas = JSON.stringify(arrayConElementos);
+        document.getElementById('coordenadasInput').value = coordenadas;
+
         bootstrap.Modal.getInstance(document.getElementById('mapaModal')).hide();
     } else {
         alert('Primero selecciona una ubicación en el mapa');
