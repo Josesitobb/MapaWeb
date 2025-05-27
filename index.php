@@ -15,7 +15,8 @@
     <!-- Encabezado del formulario -->
     <header class="form-header">
       <h1>Entorno De Seguridad En La Universidad Libre</h1>
-      <p class="lead">Esta encuesta forma parte de un proyecto de grado del programa de Ingeniería Ambiental, liderado por un estudiante </p>
+      <p class="lead"> Esta encuesta es parte de una iniciativa liderada por estudiantes del programa de Ingeniería Ambiental</p>
+
     </header>
 
     <!-- Formulario principal -->
@@ -228,7 +229,7 @@
             <legend class="h4 mb-3">Descripción de eventos de inseguridad</legend>
             <!-- En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido) -->
             <div class="mb-3">
-              <label for="Fechayhora" class="form-label required-field">11. ¿En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido)</label>
+              <label for="Fechayhora" class="form-label required-field">11. ¿En qué sitio específico fue víctima ? </label><br>
               <label class="form-label required-field">Ubicación del incidente</label>
               <button type="button" class="btn btn-map w-100" data-bs-toggle="modal" data-bs-target="#mapaModal">
                 <i class="bi bi-map"></i> Seleccionar ubicación en el mapa
