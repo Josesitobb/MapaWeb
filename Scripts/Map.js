@@ -15,7 +15,7 @@ botonConfirmar.addEventListener('click', () => {
             latitudArray: ultimaLatitud,
             longitudArray: ultimaLongitud
         })
-        alert('Enviar elementos')
+        alert('Se ha agreado la ubicacion exitosamente ')
         // Convertir elementos en texto
         const coordenadas = JSON.stringify(arrayConElementos);
         document.getElementById('coordenadasInput').value = coordenadas;

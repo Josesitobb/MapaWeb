@@ -23,7 +23,7 @@ error_reporting(E_ALL);
     <!-- Encabezado del formulario -->
     <header class="form-header">
       <h1>Entorno De Seguridad En La Universidad Libre</h1>
-      <p class="lead">Complete el siguiente formulario para reportar un robo</p>
+      <p class="lead">Esta encuesta forma parte de un proyecto de grado del programa de Ingeniería Ambiental, liderado por un estudiante </p>
     </header>
 
     <!-- Formulario principal -->
@@ -135,38 +135,38 @@ error_reporting(E_ALL);
 
         </fieldset>
         <!-- Percepción de seguridad -->
-        <fieldset class="mb-4">
+        <fieldset class="mb-4 ">
           <legend class="h4 mb-3">Percepción de seguridad</legend>
 
           <!-- ¿Cual es su percepción de seguridad en zonas aledañas a la universidad? -->
-          <label for="Perception" class="form-label required-field">9¿Cual es su percepción de seguridad en zonas aledañas a la universidad?</label>
+          <label for="Perception" class="form-label required-field">9¿Cual es su percepción de seguridad en zonas aledañas a la universidad? de la siguiente responda del 1 al 5 siendo 1 poco segura y 5 muy segura</label>
           <select class="form-control" name="Perception" id="Perception" require>
             <option value="" selected disabled>
               Seleccione una percepcion
             </option>
-            <option value="MuySegura">Muy Segura</option>
-            <option value="Segura">Segura</option>
-            <option value="Normal">Normal</option>
-            <option value="Inseguridad">Inseguridad</option>
-            <option value="MuyInsegurda">Muy Insegurda</option>
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+            <option value="3">3 </option>
+            <option value="4">4 </option>
+            <option value="5">5</option>
           </select>
 
           <div class="mb-3">
-            <label for="AvRojas26" class="form-label required-field" >10
-              ¿Sobre la percepción de seguridad en zonas aledañas a la universidad, de las siguientes asigne un valor entre Muy seguro y Muy inseguro siendo Muy seguro 5 y Muy inseguro 0?
+            <label for="AvRojas26" class="form-label required-field">10
+              ¿Sobre la percepción de seguridad en zonas aledañas a la universidad, de las siguientes asigne un valor entre 1 y 5 siendo 1 poco segura y 5 muy segura?
             </label>
             <br>
             <br>
             <h6>Avenia rojas hacia las 26</h6>
-            <select class="form-control" name="AvRojas26" id="AvRojas26"require>
+            <select class="form-control" name="AvRojas26" id="AvRojas26" require>
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
-              <option value="MuySegura">Muy Segura </option>
-              <option value="Segura">Segura </option>
-              <option value="Normal">Normal </option>
-              <option value="Inseguridad">Inseguridad </option>
-              <option value="MuyInsegurda">Muy Insegurda</option>
+              <option value="1">1 </option>
+              <option value="2">2 </option>
+              <option value="3">3 </option>
+              <option value="4">4 </option>
+              <option value="5">5</option>
             </select>
 
             <h6>Avenia rojas hacia la calle 63</h6>
@@ -174,11 +174,11 @@ error_reporting(E_ALL);
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
-              <option value="MuySegura">Muy Segura </option>
-              <option value="Segura">Segura </option>
-              <option value="Normal">Normal </option>
-              <option value="Inseguridad">Inseguridad </option>
-              <option value="MuyInsegurda">Muy Insegurda</option>
+              <option value="1">1 </option>
+              <option value="2">2 </option>
+              <option value="3">3 </option>
+              <option value="4">3 </option>
+              <option value="4">4</option>
             </select>
 
             <h6>Calle 53 entre avenida rojas y avenida Boyaca</h6>
@@ -186,11 +186,11 @@ error_reporting(E_ALL);
               <option value="" selected disabled>
                 Seleccione un valor
               </option>
-              <option value="MuySegura">Muy Segura </option>
-              <option value="Segura">Segura </option>
-              <option value="Normal">Normal </option>
-              <option value="Inseguridad">Inseguridad </option>
-              <option value="MuyInsegurda">Muy Insegurda</option>
+              <option value="5">Muy Segura </option>
+              <option value="4">Segura </option>
+              <option value="3">Normal </option>
+              <option value="2">Inseguridad </option>
+              <option value="1">Muy Insegurda</option>
             </select>
           </div>
 
@@ -221,9 +221,10 @@ error_reporting(E_ALL);
                 <label class="form-check-label" for="otroCheck" name="Intimidation[]">Otro</label>
               </div>
 
-              <div class="form-check" >
+              <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="noCheck" value="No" name="Intimidation[]">
                 <label class="form-check-label" for="noCheck" name="Intimidation[]">No (No he sido víctima)</label>
+
               </div>
             </div>
           </div>
@@ -231,193 +232,194 @@ error_reporting(E_ALL);
 
         <!-- Descripción de eventos de inseguridad -->
         <fieldset class="mb-4">
-          <legend class="h4 mb-3">Descripción de eventos de inseguridad</legend>
-          <!-- En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido) -->
-          <div class="mb-3">
-            <label for="Fechayhora" class="form-label required-field">12.¿En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido)</label>
-            <label class="form-label required-field">Ubicación del incidente</label>
-            <button type="button" class="btn btn-map w-100" data-bs-toggle="modal" data-bs-target="#mapaModal">
-              <i class="bi bi-map"></i> Seleccionar ubicación en el mapa
-            </button>
-            <small class="text-muted">Haga clic para seleccionar la ubicación exacta</small>
-          </div>
-          <input type="hidden" name="MapTheft" id="coordenadasInput">
-          <!-- 13.Que dia ocurrieron los hechos -->
+          <div id="hiddenElement" hidden>
+            <legend class="h4 mb-3">Descripción de eventos de inseguridad</legend>
+            <!-- En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido) -->
+            <div class="mb-3">
+              <label for="Fechayhora" class="form-label required-field">12.¿En cual de los siguentes sectores fue victima de hurto? (señale en el mapa tantos como hayan ocurrido)</label>
+              <label class="form-label required-field">Ubicación del incidente</label>
+              <button type="button" class="btn btn-map w-100" data-bs-toggle="modal" data-bs-target="#mapaModal">
+                <i class="bi bi-map"></i> Seleccionar ubicación en el mapa
+              </button>
+              <small class="text-muted">Haga clic para seleccionar la ubicación exacta</small>
+            </div>
+            <input type="hidden" name="MapTheft" id="coordenadasInput">
+            <!-- 13.Que dia ocurrieron los hechos -->
 
-          <div class="mb-3">
-            <label for="DescripcionUsuario" class="form-label required-field">13.Que dia ocurrieron los hecho</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="lunescheck" value="Lunes" name="DayFacts[]">
-              <label class="form-check-label" for="lunescheck">Lunes</label>
+            <div class="mb-3">
+              <label for="DescripcionUsuario" class="form-label required-field">13.Que dia ocurrieron los hecho</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="lunescheck" value="Lunes" name="DayFacts[]">
+                <label class="form-check-label" for="lunescheck">Lunes</label>
+              </div>
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="martescheck" value="Martes" name="DayFacts[]">
+                <label class="form-check-label" for="martescheck">Martes</label>
+              </div>
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="miercolescheck" value="Miercoles" name="DayFacts[]">
+                <label class="form-check-label" for="miercolescheck">Miercoles</label>
+              </div>
+
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="juevescheck" value="Jueves" name="DayFacts[]">
+                <label class="form-check-label" for="juevescheck">Jueves</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="viernescheck" value="Viernes" name="DayFacts[]">
+                <label class="form-check-label" for="viernescheck">Viernes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sabadocheck" value="Sabado" name="DayFacts[]">
+                <label class="form-check-label" for="sabadocheck">Sabado</label>
+              </div>
             </div>
 
+            <!-- 14.¿A que hora aproximada ocurrieron los hechos? -->
+            <div class="mb-3">
+              <label for="tiempoSucedido" class="form-label required-field">14.¿A que hora aproximada ocurrieron los hechos?</label>
+              <input type="time" class="form-control" id="tiempoSucedido" name="TimeFacts"
+                placeholder="Ingrese el nombre de su carrera">
 
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="martescheck" value="Martes" name="DayFacts[]">
-              <label class="form-check-label" for="lunescheck">Martes</label>
             </div>
-
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="miercolescheck" value="Miercoles" name="DayFacts[]">
-              <label class="form-check-label" for="miercolescheck">Miercoles</label>
-            </div>
-
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="ljuevescheck" value="Jueves" name="DayFacts[]">
-              <label class="form-check-label" for="juevescheck">Jueves</label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="viernescheck" value="Viernes" name="DayFacts[]">
-              <label class="form-check-label" for="lviernescheck">Viernes</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="sabadocheck" value="Sabado" name="DayFacts[]">
-              <label class="form-check-label" for="sabadocheck">Sabado</label>
-            </div>
-          </div>
-
-          <!-- 14.¿A que hora aproximada ocurrieron los hechos? -->
-          <div class="mb-3">
-            <label for="tiempoSucedido" class="form-label required-field">14.¿A que hora aproximada ocurrieron los hechos?</label>
-            <input type="time" class="form-control" id="tiempoSucedido" name="TimeFacts"
-              placeholder="Ingrese el nombre de su carrera">
-
-          </div>
-          <!-- Fue victima de hurto de: -->
-          <div class="mb-3">
-            <label for="victimaDeHurto" class="form-label required-field">15. Fue victima de hurto de/>
+            <!-- 15 Fue victima de hurto de: -->
+            <div class="mb-3">
+              <label for="victimaDeHurto" class="form-label required-field">15. Fue victima de hurto de:</label>
 
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="CelularHurto" value="Celular" name="StolenObject[]">
-                <label class="form-check-label" for="lunescheck">Celular</label>
+                <label class="form-check-label" for="CelularHurto">Celular</label>
               </div>
 
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="PortatilHurto" value="Portatil" name="StolenObject[]">
-                <label class="form-check-label" for="lunescheck">Portátil</label>
+                <label class="form-check-label" for="PortatilHurto">Portátil</label>
               </div>
 
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="relojHurto" value="Reloj" name="StolenObject[]">
-                <label class="form-check-label" for="lunescheck">Reloj</label>
+                <label class="form-check-label" for="relojHurto">Reloj</label>
               </div>
 
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="dineroHurto" value="Dinero" name="StolenObject[]">
-                <label class="form-check-label" for="lunescheck">Dinero</label>
+                <label class="form-check-label" for="dineroHurto">Dinero</label>
               </div>
 
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="Bicicleta-patinetaHurto" value="Bicicleta-patineta" name="StolenObject[]">
-                <label class="form-check-label" for="lunescheck">Bicicleta patineta</label>
+                <input class="form-check-input" type="checkbox" id="Bicicleta_patinetaHurto" value="Bicicleta-patineta" name="StolenObject[]">
+                <label class="form-check-label" for="Bicicleta_patinetaHurto">Bicicleta patineta</label>
               </div>
 
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="otroHurto" value="Otros" name="StolenObject[]">
-                <label class="form-check-label" for="lunescheck">Otros</label>
+                <label class="form-check-label" for="otroHurto">Otros</label>
+
               </div>
 
-          </div>
+              <!--16. ¿En el hecho intervinieron cuantos delincuentes?-->
+              <div class="mb-3">
+                <label for="IntervinieronDelicuentes" class="form-label required-field">16.¿En el hecho intervinieron cuantos delincuentes?</label>
+                <select class="form-control" name="NumberOfOffenders" id="IntervinieronDelicuentes">
+                  <option value="" selected disabled>
+                    Seleccione una opcion
+                  </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="Mas De 2">Mas 2</option>
 
-          <!--16. ¿En el hecho intervinieron cuantos delincuentes?-->
-          <div class="mb-3">
-            <label for="IntervinieronDelicuentes" class="form-label required-field">16.¿En el hecho intervinieron cuantos delincuentes?</label>
-            <select class="form-control" name="NumberOfOffenders" id="IntervinieronDelicuentes">
-              <option value="" selected disabled>
-                Seleccione una opcion
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="Mas De 2">Mas 2</option>
+                </select>
+              </div>
+              <!-- 17.¿Emplearon algún tipo de arma? -->
+              <div class="mb-3">
+                <label for="emplearonAlgunArma" class="form-label required-field">17.¿Emplearon algún tipo de arma?</label>
+                <select class="form-control" name="WeaponType" id="emplearonAlgunArma">
+                  <option value="" selected disabled>
+                    Seleccione una opcion
+                  </option>
+                  <option value="Ningún tipo de arma solo intimidaciones">Ningún tipo de arma solo intimidaciones</option>
+                  <option value="Alguna sustancia">Alguna sustancia</option>
+                  <option value="Arma blanca">Arma blanca</option>
+                  <option value="Arma de fuego">Arma de fuego</option>
 
-            </select>
-          </div>
-          <!-- 17.¿Emplearon algún tipo de arma? -->
-          <div class="mb-3">
-            <label for="emplearonAlgunArma" class="form-label required-field">17.¿Emplearon algún tipo de arma?</label>
-            <select class="form-control" name="WeaponType" id="emplearonAlgunArma">
-              <option value="" selected disabled>
-                Seleccione una opcion
-              </option>
-              <option value="Ningún tipo de arma solo intimidaciones">Ningún tipo de arma solo intimidaciones</option>
-              <option value="Alguna sustancia">Alguna sustancia</option>
-              <option value="Arma blanca">Arma blanca</option>
-              <option value="Arma de fuego">Arma de fuego</option>
+                </select>
+              </div>
 
-            </select>
-          </div>
+              <!-- 18.Los perpetradores se desplazaban: -->
+              <div class="mb-3">
+                <label for="desplazamientoPerpetradores" class="form-label required-field">18.Los perpetradores se desplazaban:</label>
+                <select class="form-control" name="DisplacementOfPerpetrators" id="desplazamientoPerpetradores">
+                  <option value="" selected disabled>
+                    Seleccione una opcion
+                  </option>
+                  <option value="A pie">A pie</option>
+                  <option value="Bicicleta">En bicicleta</option>
+                  <option value="Moticicleta"> Motocicleta</option>
+                  <option value="Vehiculo">Vehículo</option>
+                  <option value="Otro">Otros</option>
 
-          <!-- 18.Los perpetradores se desplazaban: -->
-          <div class="mb-3">
-            <label for="desplazamientoPerpetradores" class="form-label required-field">18.Los perpetradores se desplazaban:</label>
-            <select class="form-control" name="DisplacementOfPerpetrators" id="desplazamientoPerpetradores">
-              <option value="" selected disabled>
-                Seleccione una opcion
-              </option>
-              <option value="A pie">A pie</option>
-              <option value="Bicicleta">En bicicleta</option>
-              <option value="Moticicleta"> Motocicleta</option>
-              <option value="Vehiculo">Vehículo</option>
-              <option value="Otro">Otros</option>
+                </select>
+              </div>
 
-            </select>
-          </div>
-
-          <!-- 19.Usted se encontraba: -->
-          <div class="mb-3">
-            <label for="comoSeEncontraba" class="form-label required-field">19.Los perpetradores se desplazaban:</label>
-            <select class="form-control" name="StateAtTheMoment" id="comoSeEncontraba">
-              <option value="" selected disabled>
-                Seleccione una opcion
-              </option>
-              <option value="Solo">Solo</option>
-              <option value="Acompañado">Acompañado</option>
-            </select>
-          </div>
+              <!-- 19.Usted se encontraba: -->
+              <div class="mb-3">
+                <label for="comoSeEncontraba" class="form-label required-field">19.Usted se encontraba:</label>
+                <select class="form-control" name="StateAtTheMoment" id="comoSeEncontraba">
+                  <option value="" selected disabled>
+                    Seleccione una opcion
+                  </option>
+                  <option value="Solo">Solo</option>
+                  <option value="Acompañado">Acompañado</option>
+                </select>
+              </div>
 
 
-          <!-- 20.¿En el hecho usted presento algún tipo de lesión? -->
-          <div class="mb-3">
-            <label for="lecciones" class="form-label required-field">20.¿En el hecho usted presento algún tipo de lesión</label>
-            <select class="form-control" name="TypeOfLesson" id="lecciones">
-              <option value="" selected disabled>
-                Seleccione una opcion
-              </option>
-              <option value="Si">Si</option>
-              <option value="No">No</option>
-            </select>
-          </div>
+              <!-- 20.¿En el hecho usted presento algún tipo de lesión? -->
+              <div class="mb-3">
+                <label for="lecciones" class="form-label required-field">20.¿En el hecho usted presento algún tipo de lesión</label>
+                <select class="form-control" name="TypeOfLesson" id="lecciones">
+                  <option value="" selected disabled>
+                    Seleccione una opcion
+                  </option>
+                  <option value="Si">Si</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
 
 
 
-          <!-- 21.¿En el hecho usted presento algún tipo de lesión? -->
-          <div class="mb-3">
-            <label for="posteriorHechos" class="form-label required-field">21.Posterior a los hechos usted</label>
-            <select class="form-control" name="AfterTheEvents" id="posteriorHechos">
-              <option value="" selected disabled>
-                Seleccione una opcion
-              </option>
-              <option value="Llamo al apolicía del cuadrante">Llamo a la policía del cuadrante</option>
-              <option value="Informó a familiares o amigos">Informó a familiares o amigos</option>
-              <option value="Informó a personal de launiversidad">Informó a personal de la universidad</option>
-              <option value="No informó">No informó</option>
-            </select>
-          </div>
+              <!-- 21.¿En el hecho usted presento algún tipo de lesión? -->
+              <div class="mb-3">
+                <label for="posteriorHechos" class="form-label required-field">21.Posterior a los hechos usted</label>
+                <select class="form-control" name="AfterTheEvents" id="posteriorHechos">
+                  <option value="" selected disabled>
+                    Seleccione una opcion
+                  </option>
+                  <option value="Llamo al apolicía del cuadrante">Llamo a la policía del cuadrante</option>
+                  <option value="Informó a familiares o amigos">Informó a familiares o amigos</option>
+                  <option value="Informó a personal de launiversidad">Informó a personal de la universidad</option>
+                  <option value="No informó">No informó</option>
+                </select>
+              </div>
 
 
-          <!-- 22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?
+              <!-- 22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?
  -->
-          <div class="mb-3">
-            <label for="recomendaciones" class="form-label required-field">22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?</label>
-            <input type="text" class="form-control" id="recomendaciones"
-              placeholder="Ingrese una recomendaciones o sugerencias" name="Recommendation">
-          </div>
-
+              <div class="mb-3">
+                <label for="recomendaciones" class="form-label required-field">22.¿Tienes alguna recomendacion para mejorar la seguridad o la percepcion de seguridad en zonas aledañas a la U?</label>
+                <input type="text" class="form-control" id="recomendaciones"
+                  placeholder="Ingrese una recomendaciones o sugerencias" name="Recommendation">
+              </div>
+            </div>
 
         </fieldset>
+
 
         <!-- Botones de acción -->
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -463,6 +465,8 @@ error_reporting(E_ALL);
           <div class="modal-body">
             <div class="alert alert-info">
               <p id="Coordenadas">Haga clic en el mapa para seleccionar la ubicación exacta</p>
+              <strong>Para marcar un punto, simplemente haz doble clic en el mapa y acepta la notificación</strong>
+              <strong>Luego, haz clic en el botón 'Confirma ubicación' ubicado en la parte derecha del mapa</strong>
             </div>
             <div id="map" class="mb-3"></div>
           </div>
@@ -480,7 +484,7 @@ error_reporting(E_ALL);
     <!-- Map -->
     <script src="Scripts/Map.js"></script>
     <!-- Validaciones en javascrip -->
-    <script src="Scripts/Validation.js"></script> 
+    <script src="Scripts/Validation.js"></script>
 
 
     <!-- Google maps -->
