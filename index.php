@@ -102,7 +102,7 @@
             <div class="mb-3">
               <label for="Neighborhood" class="form-label required-field">6. Barrio de residencia</label>
               <input type="text" class="form-control" id="Neighborhood" name="Neighborhood"
-                placeholder="Escriba su barrio de residencia" require>
+                placeholder="Escriba su barrio de residencia" pattern="[ a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ]{2,50}" require>
 
             </div>
 
