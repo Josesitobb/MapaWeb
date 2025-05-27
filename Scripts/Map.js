@@ -8,18 +8,17 @@ const botonConfirmar = document.getElementById('confirmarUbicacion');
 
 botonConfirmar.addEventListener('click', () => {
 
-    if (ultimaLatitud && ultimaLongitud) {
+    if (ultimaLatitud !== null && ultimaLongitud !== null) {
 
-        arrayConElementos.push({
-            id: arrayConElementos.length + 1,
+        const coordenadaFinal = [{
+            id: 1,
             latitudArray: ultimaLatitud,
             longitudArray: ultimaLongitud
-        })
+        }]
         alert('Se ha agreado la ubicacion exitosamente ')
-        // Convertir elementos en texto
-        const coordenadas = JSON.stringify(arrayConElementos);
+        // Convertir coordenadaFinal en texto
+        const coordenadas = JSON.stringify(coordenadaFinal);
         document.getElementById('coordenadasInput').value = coordenadas;
-
         bootstrap.Modal.getInstance(document.getElementById('mapaModal')).hide();
     } else {
         alert('Primero selecciona una ubicación en el mapa');

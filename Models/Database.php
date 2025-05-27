@@ -48,17 +48,17 @@ error_reporting(E_ALL);
 
 class Database
 {
-    // private static $hostname = "veico.mysql.database.azure.com";
-    // private static $port = 3306;
-    // private static $database = "formsmaps";
-    // private static $username = "veicol12";
-    // private static $password = "Joseguerra302004";
-
-    private static $hostname = "localhost";
+    private static $hostname = "veico.mysql.database.azure.com";
     private static $port = 3306;
     private static $database = "formsmaps";
-    private static $username = "root";
-    private static $password = "";
+    private static $username = "veicol12";
+    private static $password = "Joseguerra302004";
+
+    // private static $hostname = "localhost";
+    // private static $port = 3306;
+    // private static $database = "formsmaps";
+    // private static $username = "root";
+    // private static $password = "";
 
 
     private static $pdo = null;
