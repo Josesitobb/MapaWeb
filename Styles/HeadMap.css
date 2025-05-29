@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.contenedor-mapa {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.borde-izquierdo {
+  width: 50px;
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.borde-derecho {
+  width: 50px;
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-mapa {
+  flex: 1;
+  padding: 20px;
+  min-height: 500px;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+
+/* Estilos opcionales para los bordes */
+.elemento-borde {
+  margin: 10px 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: bold;
+}

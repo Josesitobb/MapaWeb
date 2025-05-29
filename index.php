@@ -471,7 +471,7 @@
       </div>
     </div>
 
-
+    <a href="View/HeadMap.php" hidden>De click para ir al otro mapa</a>
 
     <!-- Scripts -->
     <!-- Map -->

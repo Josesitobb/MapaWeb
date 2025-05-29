@@ -71,7 +71,7 @@ class Database
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 ];
 
-                self::$pdo = new PDO($dsn, self::$username, self::$password, $options);
+                self::$pdo = new PDO($dsn, self::$username, self::$password,$options);
             } catch (PDOException $e) {
 
                 throw new Exception("Error en la conexión a la base de datos: " . $e->getMessage());

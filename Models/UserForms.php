@@ -2,7 +2,6 @@
 
 
 require_once('../Models/Database.php');
-require_once('../Models/Database.php');
 
 class User
 {
@@ -88,7 +87,7 @@ class User
         $AfterTheEvents,
         $Recommendation
     ) {
-        $db = new Database("localhost", 3306, "formsmaps", "root", "");
+
         $this->db =  Database::getConnection();;
         $this->Program = $Program;
         $this->Semester = $Semester;
@@ -325,4 +324,9 @@ class User
             die($e->getMessage());
         }
     }
+
+    
+   
 }
+
+
